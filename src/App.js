@@ -7,12 +7,7 @@ import ContactList from "./Components/ContactList";
 
 class App extends Component {
   state = {
-    contacts: [
-      { id: "id-1", name: "Alex Simona", number: "459-00-56" },
-      { id: "id-2", name: "Harison Krein", number: "460-89-12" },
-      { id: "id-3", name: "Lui Clemensa", number: "623-17-56" },
-      { id: "id-4", name: "Olga Kopernik", number: "290-71-59" },
-    ],
+    contacts: [],
     filter: "",
   };
 
@@ -46,11 +41,23 @@ class App extends Component {
       contacts: prevState.contacts.filter(
         (contact) => contactId !== contact.id
       ),
-      filter: '',
+      filter: "",
     }));
   };
 
-  
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const persedContacts = JSON.parse(contacts);
+    if (persedContacts) {
+      this.setState({ contacts: persedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   render() {
     const { filter, contacts } = this.state;
