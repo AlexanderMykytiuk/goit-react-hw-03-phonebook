@@ -1,0 +1,14 @@
+.findContact {
+  max-width: 600px;
+}
+
+.findContactLabel {
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 500px;
+}
+
+.findContactInput {
+  width: 300px;
+  height: 20px;
+}

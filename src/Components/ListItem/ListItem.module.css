@@ -1,0 +1,31 @@
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 3px inset rgb(5, 54, 39);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+.delete {
+  height: 30px;
+  margin-left: 10px;
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(247, 251, 253);
+  color: rgb(173, 5, 5);
+  cursor: pointer;
+  outline: none;
+}
+.name,
+.number {
+  font-size: 20px;
+}
+.delete:hover {
+  background-color: rgb(185, 15, 219);
+  color: black;
+}
